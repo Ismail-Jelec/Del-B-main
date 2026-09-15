@@ -17,26 +17,47 @@ class Course
         if(!student.Contains(newStudent))
         {
             student.Add(newStudent);
+            newStudent.courses.Add(this);
         }
 
-        newStudent.courses.Add(this);
+        else
+        {
+            Console.WriteLine("Student couldn't be added");
+
+        }
+
     }
 
     public void Remove(Student newStudent)
     {
         if(student.Contains(newStudent))
         {
-            
+            student.Remove(newStudent);
+            newStudent.courses.Remove(this);
+        }
+
+        else
+        {
+            Console.WriteLine("Student couldn't be removed");
+
         }
     }
 
     public void RollCall()
     {
+        if(student.Count == 0)
+        {
+            Console.WriteLine("The course doesn't have any students");
+        }
         
+        foreach(Student enrolledStudent in student)
+        {
+            Console.WriteLine($"There is {student.Count} places remaining out of {}");
+        }
     }
 
-    public void ToString()
+    public override string ToString()
     {
-        
+        return ;
     }
 }
