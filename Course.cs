@@ -14,19 +14,26 @@ class Course
 
     public void Enroll(Student newStudent)
     {
-        if(!student.Contains(newStudent))
+        if(student.Count >= maxseats)
         {
-            student.Add(newStudent);
-            newStudent.courses.Add(this);
+            Console.WriteLine("There are no more spaces left");
         }
 
         else
         {
-            Console.WriteLine("Student couldn't be added");
+            if (!student.Contains(newStudent))
+            {
+            student.Add(newStudent);
+            newStudent.courses.Add(this);            
+            }
 
+            else
+            {
+                Console.WriteLine("Student couldn't be added");
+            }
         }
-
     }
+        
 
     public void Remove(Student newStudent)
     {
@@ -52,12 +59,14 @@ class Course
         
         foreach(Student enrolledStudent in student)
         {
-            Console.WriteLine($"There is {student.Count} places remaining out of {}");
+            Console.WriteLine($"-{enrolledStudent}");
         }
     }
 
     public override string ToString()
     {
-        return ;
+        return $"There is {student.Count}/{maxseats} remaining";
+
+
     }
 }
