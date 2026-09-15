@@ -26,7 +26,7 @@ class Student(string FirstName, string LastName)
         if(courses.Count >= 1)
         foreach(Course courselista in courses)
         {
-            Console.WriteLine($"-{courselista}");
+            Console.WriteLine($"Detta är {firstname}s kurser: {courselista.course}");
         }
 
         else
@@ -37,7 +37,7 @@ class Student(string FirstName, string LastName)
 
     public override string ToString()
     {
-        return firstname + "" + lastname;
+        return firstname + " " + lastname;
     }
 
 }

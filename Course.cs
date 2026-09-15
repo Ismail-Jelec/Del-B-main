@@ -1,7 +1,7 @@
 
 class Course
 {
-    List<Student> student = new List<Student>();
+    public List<Student> student = new List<Student>();
 
     public string course;
     public int maxseats;
@@ -29,7 +29,7 @@ class Course
 
             else
             {
-                Console.WriteLine("Student couldn't be added");
+                Console.WriteLine("Student is already there");
             }
         }
     }
@@ -56,10 +56,12 @@ class Course
         {
             Console.WriteLine("The course doesn't have any students");
         }
+
+        Console.WriteLine($"\nAlla elever i {course}:");        
         
         foreach(Student enrolledStudent in student)
         {
-            Console.WriteLine($"-{enrolledStudent}");
+            Console.WriteLine($"{enrolledStudent}");
         }
     }
 
