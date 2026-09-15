@@ -18,14 +18,25 @@ class Student(string Name)
     }
 
 
-    public void Schedule(Course newCourse)
+    public void Schedule()
     {
-        
+
+
+        if(courses.Count >= 1)
+        foreach(Course courselista in courses)
+        {
+            Console.WriteLine($"-{courselista}");
+        }
+
+        else
+        {
+            Console.WriteLine("The student does not have any courses");
+        }
     }
 
     public override string ToString()
     {
-        
+        return name;
     }
 
 }
