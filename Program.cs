@@ -10,9 +10,26 @@ Student perez = new Student("Sergio", "Perez");
 
 Console.WriteLine("");
 matte4.RollCall();
+
+Console.WriteLine("");
+
 ismail.Join(matte4);
 ayaan.Join(matte4);
 ayaan.Join(svenska3);
 ayaan.Schedule();
 matte4.RollCall();
 
+Console.WriteLine("");
+
+Console.WriteLine(matte4.ToString());
+Console.WriteLine(ismail.ToString());
+
+Console.WriteLine("");
+
+ismail.Leave(matte4);
+matte4.RollCall();
+
+Console.WriteLine("");
+
+matte4.Remove(ayaan);
+matte4.Enroll(perez);

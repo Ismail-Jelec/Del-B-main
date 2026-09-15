@@ -24,7 +24,8 @@ class Course
             if (!student.Contains(newStudent))
             {
             student.Add(newStudent);
-            newStudent.courses.Add(this);            
+            newStudent.courses.Add(this);    
+            Console.WriteLine($"{newStudent} has joined the course {course}");        
             }
 
             else
@@ -34,18 +35,18 @@ class Course
         }
     }
         
-
     public void Remove(Student newStudent)
     {
         if(student.Contains(newStudent))
         {
             student.Remove(newStudent);
             newStudent.courses.Remove(this);
+            Console.WriteLine($"{newStudent} was removed from {course}");
         }
 
         else
         {
-            Console.WriteLine("Student couldn't be removed");
+            Console.WriteLine($"{newStudent} couldn't be removed");
 
         }
     }
@@ -54,15 +55,19 @@ class Course
     {
         if(student.Count == 0)
         {
-            Console.WriteLine("The course doesn't have any students");
+            Console.WriteLine($"{course} doesn't have any students");
         }
 
-        Console.WriteLine($"\nAlla elever i {course}:");        
-        
-        foreach(Student enrolledStudent in student)
+        else
         {
-            Console.WriteLine($"{enrolledStudent}");
+            Console.WriteLine($"\nAll students in {course}:");        
+            
+            foreach(Student enrolledStudent in student)
+            {
+                Console.WriteLine($"{enrolledStudent}");
+            }    
         }
+        
     }
 
     public override string ToString()
