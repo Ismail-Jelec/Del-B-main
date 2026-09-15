@@ -1,6 +1,6 @@
 class Student(string Name)
 {
-    List<Course> course = new List<Course>();
+    public List<Course> courses = new List<Course>();
 
     string namn = Name;
 
