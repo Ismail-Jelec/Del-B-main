@@ -1,8 +1,9 @@
-class Student(string Name)
+class Student(string FirstName, string LastName)
 {
     public List<Course> courses = new List<Course>();
 
-    public string name = Name;
+    public string firstname = FirstName;
+    public string lastname = LastName;
 
 
 
@@ -36,7 +37,7 @@ class Student(string Name)
 
     public override string ToString()
     {
-        return name;
+        return firstname + "" + lastname;
     }
 
 }

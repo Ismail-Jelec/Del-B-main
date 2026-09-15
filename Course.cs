@@ -65,8 +65,6 @@ class Course
 
     public override string ToString()
     {
-        return $"There is {student.Count}/{maxseats} remaining";
-
-
+        return $"There is {maxseats - student.Count} out of {maxseats} seats left in the course {course}";
     }
 }
