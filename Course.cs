@@ -1,31 +1,31 @@
 
 class Course
 {
-    public List<Student> student = new List<Student>();
+    public List<Student> Students = new List<Student>();
 
-    public string course;
-    public int maxseats;
+    public string Name;
+    public int MaxSeats;
 
-    public Course(string CourseName, int MaxSeats)
+    public Course(string CourseName, int Maxseats)
     {
-        course = CourseName;
-        maxseats = MaxSeats;
+        Name = CourseName;
+        MaxSeats = Maxseats;
     }
 
     public void Enroll(Student newStudent)
     {
-        if(student.Count >= maxseats)
+        if(Students.Count >= MaxSeats)
         {
             Console.WriteLine("There are no more spaces left");
         }
 
         else
         {
-            if (!student.Contains(newStudent))
+            if (!Students.Contains(newStudent))
             {
-            student.Add(newStudent);
-            newStudent.courses.Add(this);    
-            Console.WriteLine($"{newStudent} has joined the course {course}");        
+            Students.Add(newStudent);
+            newStudent.Courses.Add(this);    
+            Console.WriteLine($"{newStudent} has joined the course {Name}");        
             }
 
             else
@@ -37,11 +37,11 @@ class Course
         
     public void Remove(Student newStudent)
     {
-        if(student.Contains(newStudent))
+        if(Students.Contains(newStudent))
         {
-            student.Remove(newStudent);
-            newStudent.courses.Remove(this);
-            Console.WriteLine($"{newStudent} was removed from {course}");
+            Students.Remove(newStudent);
+            newStudent.Courses.Remove(this);
+            Console.WriteLine($"{newStudent} was removed from {Name}");
         }
 
         else
@@ -53,16 +53,16 @@ class Course
 
     public void RollCall()
     {
-        if(student.Count == 0)
+        if(Students.Count == 0)
         {
-            Console.WriteLine($"{course} doesn't have any students");
+            Console.WriteLine($"{Name} doesn't have any students");
         }
 
         else
         {
-            Console.WriteLine($"\nAll students in {course}:");        
+            Console.WriteLine($"\nAll students in {Name}:");        
             
-            foreach(Student enrolledStudent in student)
+            foreach(Student enrolledStudent in Students)
             {
                 Console.WriteLine($"{enrolledStudent}");
             }    
@@ -72,6 +72,6 @@ class Course
 
     public override string ToString()
     {
-        return $"There is {maxseats - student.Count} out of {maxseats} seats left in the course {course}";
+        return $"There is {MaxSeats - Students.Count} out of {MaxSeats} seats left in the course {Name}";
     }
 }

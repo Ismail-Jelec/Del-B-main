@@ -3,10 +3,10 @@ Course svenska3 = new Course("Svenska 3", 3);
 Course engelska7 = new Course("Engelska 7", 3);
 Course teknik = new Course("Teknik", 3);
 
-Student ismail = new Student("Ismail", "Jelec");
-Student ayaan = new Student("Ayaan", "Khan");
-Student kyle = new Student("Kyle", "Busch");
-Student perez = new Student("Sergio", "Perez");
+Student ismail = new Student("Ismail");
+Student ayaan = new Student("Ayaan");
+Student kyle = new Student("Kyle");
+Student perez = new Student("Sergio");
 
 Console.WriteLine("");
 matte4.RollCall();
@@ -15,7 +15,14 @@ Console.WriteLine("");
 
 ismail.Join(matte4);
 ayaan.Join(matte4);
+kyle.Join(matte4);
+perez.Join(matte4);
 ayaan.Join(svenska3);
+ayaan.Join(svenska3);
+
+
+Console.WriteLine("");
+
 ayaan.Schedule();
 matte4.RollCall();
 
@@ -33,3 +40,4 @@ Console.WriteLine("");
 
 matte4.Remove(ayaan);
 matte4.Enroll(perez);
+engelska7.Remove(ayaan);

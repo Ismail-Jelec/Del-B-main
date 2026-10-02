@@ -1,11 +1,6 @@
-class Student(string FirstName, string LastName)
+class Student(string Name)
 {
-    public List<Course> courses = new List<Course>();
-
-    public string firstname = FirstName;
-    public string lastname = LastName;
-
-
+    public List<Course> Courses = new List<Course>();
 
     public void Join(Course newCourse)
     {
@@ -21,13 +16,13 @@ class Student(string FirstName, string LastName)
     {
 
 
-        if(courses.Count >= 1)
+        if(Courses.Count >= 1)
         {
-            Console.WriteLine($"This is {firstname}'s courses: ");
+            Console.WriteLine($"This is {Name}'s courses: ");
 
-            foreach(Course courselista in courses)
+            foreach(Course courselista in Courses)
             {
-                Console.WriteLine($"{courselista.course}");
+                Console.WriteLine($"{courselista.Name}");
             }
         }
             else
@@ -38,7 +33,7 @@ class Student(string FirstName, string LastName)
 
     public override string ToString()
     {
-        return firstname + " " + lastname;
+        return Name;
     }
 
 }
